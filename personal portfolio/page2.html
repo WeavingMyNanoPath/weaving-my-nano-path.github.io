@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weaving My Nano-Path</title>
+    <link rel="stylesheet" href="/css/page2.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="container">
+            <span class="logo">Weaving My Nano-Path</span>
+            <nav>
+                <ul>
+                    <li class="active"><a href="index.html">Main</a></li>
+                    <li><a href="#">Research</a></li>
+                    <li><a href="index.html#about-me-section">Education</a></li>
+                    <li><a href="#">Inspiration</a></li>
+                    <li class="btn"><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container trending">
+            <nav>
+                <ul>
+                    <li class="btn2"><a href="#">See more</a></li>
+                </ul>
+            </nav>
+            <h3>Key interests</h3>
+
+            <div class="trending-content">
+                <div class="icons-column">
+                    <div class="icon-wrapper" data-target="bacterial-block">
+                        <img src="img/bacteria.png" alt="Bacteria Icon">
+                    </div>
+                    <div class="icon-wrapper" data-target="phage-block">
+                        <img src="img/bacteriophage.png" alt="Phage Icon">
+                    </div>
+                    <div class="icon-wrapper" data-target="nanomaterials-block">
+                        <img src="img/nanoparticle.png" alt="Nanoparticle Icon">
+                    </div>
+                    <div class="icon-wrapper" data-target="drug-block">
+                        <img src="img/drugdel.png" alt="Drug Delivery Icon">
+                    </div>
+                </div>
+
+                <div class="skills">
+                    <div class="block" id="bacterial-block">
+                        <img src="img/bacterial.jpg" alt="Bacterial Resistance">
+                        <span>Bacterial Resistance</span>
+                    </div>
+                    <div class="block" id="phage-block">
+                        <img src="img/phage.jpg" alt="Phages Inactivation">
+                        <span>Phages Inactivation</span>
+                    </div>
+                    <div class="block" id="nanomaterials-block">
+                        <img src="img/bioinspired.jpg" alt="Bioinspired Nanomaterials">
+                        <span>Bioinspired Functional Nanomaterials</span>
+                    </div>
+                    <div class="block" id="drug-block">
+                        <img src="img/drug.jpg" alt="Drug Delivery">
+                        <span>Drug Delivery Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <p>&copy; 2025 Kaciaryna Rudko. All rights reserved.</p>
+            </div>
+            <p>Icons provided by Freepik (Flaticon) under a free license requiring attribution</p>
+        </footer>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const iconWrappers = document.querySelectorAll('.icon-wrapper');
+
+                iconWrappers.forEach(icon => {
+                    icon.addEventListener('mouseenter', () => {
+                        const targetId = icon.getAttribute('data-target');
+                        const targetBlock = document.getElementById(targetId);
+                        const targetImage = targetBlock ? targetBlock.querySelector('img') : null;
+                        
+                        if (targetImage) {
+                            targetImage.classList.add('img-hover-effect');
+                        }
+                    });
+
+                    icon.addEventListener('mouseleave', () => {
+                        const targetId = icon.getAttribute('data-target');
+                        const targetBlock = document.getElementById(targetId);
+                        const targetImage = targetBlock ? targetBlock.querySelector('img') : null;
+                        
+                        if (targetImage) {
+                            targetImage.classList.remove('img-hover-effect');
+                        }
+                    });
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>

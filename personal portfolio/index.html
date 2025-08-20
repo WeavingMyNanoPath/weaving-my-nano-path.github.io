@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weaving My Nano-Path</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="container">
+            <span class="logo">Weaving My Nano-Path</span>
+            <nav>
+                <ul>
+                    <li class="active"><a href="#">Main</a></li>
+                    <li><a href="page2.html">Research</a></li>
+                    <li><a href="#about-me-section">Education</a></li> 
+                    <li><a href="#">Inspiration</a></li>
+                    <li class="btn"><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="hero container">
+            <div class="hero--info">
+                <h2>Hi, I'm Kacia.</h2>
+                <h1>A passionate bioengineer and aspiring researcher.</h1>
+                <p>I'm always thinking ahead, looking for creative solutions, and taking full responsibility for the quality of my work.</p>
+                <a href="page2.html" class="btn1">Get more details</a>
+            </div>
+            <img src="img/portfolio photo.JPG" alt="">
+        </div>
+         <div class="container big-text">
+                    <h2><em>A man must cling to the belief that the incomprehensible is comprehensible; otherwise he would not try to fathom it.</em> </h2>
+                    <p>— Johann Wolfgang von Goethe</p>
+         </div>
+         
+         <div id="about-me-section" class="container banner"> 
+            <h3>About Me</h3>
+            <p>As a student at the Warsaw University of Life Sciences, I've developed a strong foundation in biomedical technology and gained initial research experience.</p>
+            <img src="img/AI photo.svg" alt="">
+         </div>
+
+    <div id="my-way-section" class="timeline-container">
+        <h1>My Way</h1>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2022-2026</div>
+                <div class="timeline-content">
+                    <h3>Warsaw University of Life Sciences</h3>
+                    <p>Bachelor of Engineering in Biomedical Technology – Warsaw, Poland</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2023 - currently</div>
+                <div class="timeline-content">
+                    <h3>Interdepartmental Scientific Circle of Nanobiotechnologists</h3>
+                    <p>Popularisation of science for kids, Conference participation, Scientific exhibitions – Warsaw, Poland</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">June 2024 - currently</div>
+                <div class="timeline-content">
+                    <h3>Institute of Physical Chemistry of the Polish Academy of Sciences</h3>
+                    <p>Member of laboratory team "Living Materials" – Warsaw, Poland</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">April 2025 - May 2025</div>
+                <div class="timeline-content">
+                    <h3>University of Brescia</h3>
+                    <p>Blended Intensive Program on Scientific Methodology in Thesis Writing in Health – Brescia, Italy</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">July 2025 - October 2025</div>
+                <div class="timeline-content">
+                    <h3>Kyushu Institute of Technology</h3>
+                    <p>ERASMUS+ Internship – Department of Biological Functions Engineering – Kitakyushu, Japan</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Остановить наблюдение после появления
+            }
+        });
+    }, observerOptions);
+
+    timelineItems.forEach(item => {
+        observer.observe(item);
+    });
+});
+
+    </script>
+    </div>
+           
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Kaciaryna Rudko. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
